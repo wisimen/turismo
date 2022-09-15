@@ -13,6 +13,7 @@
         public string Telefono { get; internal set; }
 
         public string Email { get; internal set; }
+<<<<<<< Updated upstream
 
         public string Foto { get; set; }
 
@@ -36,5 +37,7 @@
             Email = email;
             Foto = foto;
         }
+=======
+>>>>>>> Stashed changes
     }
 }

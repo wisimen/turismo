@@ -13,10 +13,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\Hotel\" />
-    <Folder Include="DTOs\Sucursal\" />
-    <Folder Include="DTOs\Vuelo\" />
-  </ItemGroup>
-
 </Project>

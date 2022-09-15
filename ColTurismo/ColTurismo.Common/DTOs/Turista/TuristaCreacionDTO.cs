@@ -26,6 +26,7 @@ namespace ColTurismo.Common.DTOs.Turista
         [EmailAddress(ErrorMessage = "El campo de {0} no es una dirección de correo electrónico válida")]
         [MaxLength(100, ErrorMessage = "El campo {0} no puede tener más de {1} caracteres")]
         public string Email { get; set; }
+<<<<<<< Updated upstream
 
         public IFormFile Foto { get; set; }
 
@@ -39,5 +40,7 @@ namespace ColTurismo.Common.DTOs.Turista
             Email = email;
             Foto = foto;
         }
+=======
+>>>>>>> Stashed changes
     }
 }

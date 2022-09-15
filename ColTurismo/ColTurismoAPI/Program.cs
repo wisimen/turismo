@@ -24,7 +24,7 @@ builder.Services.AddHttpContextAccessor();
 
 
 //Add AutoMapper profiles
-builder.Services.AddSingleton(provider => new MapperConfiguration(
+builder.Services.AddSingleton(_ => new MapperConfiguration(
     cfg => cfg.AddProfile(new AutoMapperProfiles())
     ).CreateMapper());
 //Add Db

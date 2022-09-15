@@ -46,7 +46,7 @@ namespace ColTurismoAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromForm]TuristaCreacionDTO turistaCreacion)
+        public async Task<ActionResult> Post([FromForm]TuristaCrearDTO turistaCreacion)
         {
             var turista = mapper.Map<Turista>(turistaCreacion);
            

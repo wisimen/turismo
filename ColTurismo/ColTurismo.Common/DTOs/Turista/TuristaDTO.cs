@@ -13,31 +13,7 @@
         public string Telefono { get; internal set; }
 
         public string Email { get; internal set; }
-<<<<<<< Updated upstream
-
+        
         public string Foto { get; set; }
-
-        public TuristaDTO(int codTurista, string nombre, string apellidos, string direccion, string telefono, string email , string foto)
-        {
-            CodTurista = codTurista;
-            Nombre = nombre;
-            Apellidos = apellidos;
-            Direccion = direccion;
-            Telefono = telefono;
-            Email = email;
-            Foto = foto;    
-        }
-
-        public TuristaDTO(string nombre, string apellidos, string direccion, string telefono, string email, string foto)
-        {
-            Nombre = nombre;
-            Apellidos = apellidos;
-            Direccion = direccion;
-            Telefono = telefono;
-            Email = email;
-            Foto = foto;
-        }
-=======
->>>>>>> Stashed changes
     }
 }

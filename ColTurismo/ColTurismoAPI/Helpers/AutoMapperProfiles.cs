@@ -10,7 +10,7 @@ namespace ColTurismoAPI.Helpers
         {
             //Mappers de turista
             CreateMap<Turista, TuristaDTO>();
-            CreateMap<TuristaCreacionDTO, Turista>();
+            CreateMap<TuristaCrearDTO, Turista>();
             CreateMap<TuristaActualizarDTO, Turista>();
             //Mappers de vuelo
             //...

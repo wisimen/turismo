@@ -16,6 +16,6 @@ namespace ColTurismoAPI.Data.Entities
         [RegularExpression(@"^[0-9]+$", ErrorMessage = "Solo se permiten números")]
         public string Telefono { get; set; }
         //Referencias
-        public ICollection<ContratoSucursal> ContratoSucursal { get; set; }
+        public ICollection<ContratoSucursal> Contratos { get; set; }
     }
 }

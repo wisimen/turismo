@@ -5,11 +5,7 @@ namespace ColTurismoAPI.Data.Entities
 {
     public class ReservaVuelo
     {
-        [Key]
-        [Column(Order = 1)]
         public int NumeroVuelo { get; set; }
-        [Key]
-        [Column(Order = 2)]
         public int CodTurista { get; set; }
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string Clase { get; set; }

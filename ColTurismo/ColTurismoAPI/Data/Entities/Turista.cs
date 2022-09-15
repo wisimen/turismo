@@ -22,6 +22,8 @@ namespace ColTurismoAPI.Data.Entities
         [EmailAddress(ErrorMessage = "El campo de {0} no es una dirección de correo electrónico válida")]
         public string Email { get; set; }
         //Referencias
-        public ICollection<ReservaHotel> ReservaHotel { get; set; }
+        public ICollection<ReservaVuelo> Vuelos { get; set; }
+        public ICollection<ReservaHotel> Hoteles { get; set; }
+        public ICollection<ContratoSucursal> Contratos  { get; set; }
     }
 }

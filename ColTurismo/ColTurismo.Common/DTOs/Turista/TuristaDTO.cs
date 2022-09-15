@@ -14,7 +14,9 @@
 
         public string Email { get; internal set; }
 
-        public TuristaDTO(int codTurista, string nombre, string apellidos, string direccion, string telefono, string email)
+        public string Foto { get; set; }
+
+        public TuristaDTO(int codTurista, string nombre, string apellidos, string direccion, string telefono, string email , string foto)
         {
             CodTurista = codTurista;
             Nombre = nombre;
@@ -22,6 +24,17 @@
             Direccion = direccion;
             Telefono = telefono;
             Email = email;
+            Foto = foto;    
+        }
+
+        public TuristaDTO(string nombre, string apellidos, string direccion, string telefono, string email, string foto)
+        {
+            Nombre = nombre;
+            Apellidos = apellidos;
+            Direccion = direccion;
+            Telefono = telefono;
+            Email = email;
+            Foto = foto;
         }
     }
 }

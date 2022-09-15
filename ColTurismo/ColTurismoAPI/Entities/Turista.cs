@@ -28,7 +28,11 @@ namespace ColTurismoAPI.Entities
         [EmailAddress(ErrorMessage = "El campo de {0} no es una dirección de correo electrónico válida")]
         [MaxLength(100, ErrorMessage = "El campo {0} no puede tener más de {1} caracteres")]
         public string Email { get; set; }
-        
+
+        public string Foto { get; set; }
+
+
+
         //Referencias
         public ICollection<ReservaVuelo> Vuelos { get; set; }
         

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace ColTurismo.Common.DTOs.Turista
 {
@@ -26,13 +27,17 @@ namespace ColTurismo.Common.DTOs.Turista
         [MaxLength(100, ErrorMessage = "El campo {0} no puede tener más de {1} caracteres")]
         public string Email { get; set; }
 
-        public TuristaCreacionDTO(string nombre, string apellidos, string direccion, string telefono, string email)
+        public IFormFile Foto { get; set; }
+
+
+        public TuristaCreacionDTO(string nombre, string apellidos, string direccion, string telefono, string email, IFormFile foto)
         {
             Nombre = nombre;
             Apellidos = apellidos;
             Direccion = direccion;
             Telefono = telefono;
             Email = email;
+            Foto = foto;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ColTurismoAPI.Data.Entities
+namespace ColTurismoAPI.Entities
 {
     public class ReservaVuelo
     {

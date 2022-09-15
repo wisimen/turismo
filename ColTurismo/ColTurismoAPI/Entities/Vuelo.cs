@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ColTurismoAPI.Data.Entities
+namespace ColTurismoAPI.Entities
 {
     public class Vuelo
     {

@@ -1,5 +1,5 @@
 ﻿using ColTurismo.Common.Helpers;
-using ColTurismoAPI.Data.Entities;
+using ColTurismoAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Hosting;

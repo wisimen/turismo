@@ -22,7 +22,7 @@ namespace ColTurismoAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ContratoSucursal", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ContratoSucursal", b =>
                 {
                     b.Property<int>("CodSucursal")
                         .HasColumnType("int");
@@ -37,7 +37,7 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("ContratoSucursal");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Hotel", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Hotel", b =>
                 {
                     b.Property<int>("CodHotel")
                         .ValueGeneratedOnAdd()
@@ -70,10 +70,10 @@ namespace ColTurismoAPI.Migrations
 
                     b.HasKey("CodHotel");
 
-                    b.ToTable("Hoteles");
+                    b.ToTable("Hotel");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ReservaHotel", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ReservaHotel", b =>
                 {
                     b.Property<int>("CodTurista")
                         .HasColumnType("int");
@@ -105,7 +105,7 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("ReservaHotel");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ReservaVuelo", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ReservaVuelo", b =>
                 {
                     b.Property<int>("NumeroVuelo")
                         .HasColumnType("int");
@@ -124,7 +124,7 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("ReservaVuelo");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Sucursal", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Sucursal", b =>
                 {
                     b.Property<int>("CodSucursal")
                         .ValueGeneratedOnAdd()
@@ -152,7 +152,7 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("Sucursal");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Turista", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Turista", b =>
                 {
                     b.Property<int>("CodTurista")
                         .ValueGeneratedOnAdd()
@@ -190,7 +190,7 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("Turista");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Vuelo", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Vuelo", b =>
                 {
                     b.Property<int>("NumeroVuelo")
                         .ValueGeneratedOnAdd()
@@ -225,15 +225,15 @@ namespace ColTurismoAPI.Migrations
                     b.ToTable("Vuelo");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ContratoSucursal", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ContratoSucursal", b =>
                 {
-                    b.HasOne("ColTurismoAPI.Data.Entities.Sucursal", "Sucursal")
+                    b.HasOne("ColTurismoAPI.Entities.Sucursal", "Sucursal")
                         .WithMany("Contratos")
                         .HasForeignKey("CodSucursal")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ColTurismoAPI.Data.Entities.Turista", "Turista")
+                    b.HasOne("ColTurismoAPI.Entities.Turista", "Turista")
                         .WithMany("Contratos")
                         .HasForeignKey("CodTurista")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -244,15 +244,15 @@ namespace ColTurismoAPI.Migrations
                     b.Navigation("Turista");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ReservaHotel", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ReservaHotel", b =>
                 {
-                    b.HasOne("ColTurismoAPI.Data.Entities.Hotel", "Hotel")
+                    b.HasOne("ColTurismoAPI.Entities.Hotel", "Hotel")
                         .WithMany("ReservaHotel")
                         .HasForeignKey("CodHotel")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ColTurismoAPI.Data.Entities.Turista", "Turista")
+                    b.HasOne("ColTurismoAPI.Entities.Turista", "Turista")
                         .WithMany("Hoteles")
                         .HasForeignKey("CodTurista")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -263,15 +263,15 @@ namespace ColTurismoAPI.Migrations
                     b.Navigation("Turista");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.ReservaVuelo", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.ReservaVuelo", b =>
                 {
-                    b.HasOne("ColTurismoAPI.Data.Entities.Turista", "Turista")
+                    b.HasOne("ColTurismoAPI.Entities.Turista", "Turista")
                         .WithMany("Vuelos")
                         .HasForeignKey("CodTurista")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ColTurismoAPI.Data.Entities.Vuelo", "Vuelo")
+                    b.HasOne("ColTurismoAPI.Entities.Vuelo", "Vuelo")
                         .WithMany("ReservaVuelo")
                         .HasForeignKey("NumeroVuelo")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -282,17 +282,17 @@ namespace ColTurismoAPI.Migrations
                     b.Navigation("Vuelo");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Hotel", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Hotel", b =>
                 {
                     b.Navigation("ReservaHotel");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Sucursal", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Sucursal", b =>
                 {
                     b.Navigation("Contratos");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Turista", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Turista", b =>
                 {
                     b.Navigation("Contratos");
 
@@ -301,7 +301,7 @@ namespace ColTurismoAPI.Migrations
                     b.Navigation("Vuelos");
                 });
 
-            modelBuilder.Entity("ColTurismoAPI.Data.Entities.Vuelo", b =>
+            modelBuilder.Entity("ColTurismoAPI.Entities.Vuelo", b =>
                 {
                     b.Navigation("ReservaVuelo");
                 });

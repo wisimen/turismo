@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ColTurismoAPI.Migrations
 {
     [DbContext(typeof(ColTurismoContext))]
-    [Migration("20220915050802_CreacionTablas")]
-    partial class CreacionTablas
+    [Migration("20220915170454_Renombrar_Hotel")]
+    partial class Renombrar_Hotel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace ColTurismoAPI.Migrations
 
                     b.HasKey("CodHotel");
 
-                    b.ToTable("Hoteles");
+                    b.ToTable("Hotel");
                 });
 
             modelBuilder.Entity("ColTurismoAPI.Entities.ReservaHotel", b =>

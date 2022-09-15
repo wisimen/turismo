@@ -1,5 +1,7 @@
-﻿using ColTurismoAPI.Data.Entities;
+﻿using ColTurismo.Common.Helpers;
+using ColTurismoAPI.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Hosting;
 
 namespace ColTurismoAPI.Data
@@ -30,6 +32,15 @@ namespace ColTurismoAPI.Data
             modelBuilder.Entity<ReservaHotel>().HasKey(
                 r => new { r.CodTurista, r.CodHotel }
             );
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder builder)
+        {
+            builder.Properties<DateOnly>()
+                .HaveConversion<DateOnlyConverter>()
+                .HaveColumnType("date");
+            builder.Properties<TimeOnly>()
+                .HaveConversion<TimeOnlyConverter>()
+                .HaveColumnType("time");
         }
     }
 }

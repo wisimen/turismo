@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -17,7 +18,7 @@ namespace ColTurismoAPI.Migrations
                     Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Ciudad = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     NumPlazas = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -32,7 +33,7 @@ namespace ColTurismoAPI.Migrations
                     CodSucursal = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Telefono = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false)
                 },
                 constraints: table =>
@@ -48,9 +49,9 @@ namespace ColTurismoAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Apellidos = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Telefono = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,8 +64,8 @@ namespace ColTurismoAPI.Migrations
                 {
                     NumeroVuelo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Fecha = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Hora = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "date", nullable: false),
+                    Hora = table.Column<TimeSpan>(type: "time", nullable: false),
                     Origen = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Destino = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PlazaTotal = table.Column<int>(type: "int", nullable: false),
@@ -107,9 +108,9 @@ namespace ColTurismoAPI.Migrations
                     CodTurista = table.Column<int>(type: "int", nullable: false),
                     CodReserva = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FechaEntrada = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaSalida = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Regimen = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    FechaEntrada = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaSalida = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Regimen = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {
